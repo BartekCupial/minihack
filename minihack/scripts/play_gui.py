@@ -45,6 +45,15 @@ def main():
             reset()
             return
 
+        if event.key == "down":
+            event.key = "j"
+        elif event.key == "left":
+            event.key = "h"
+        elif event.key == "right":
+            event.key = "l"
+        elif event.key == "up":
+            event.key = "k"
+
         if event.key.startswith("ctrl+"):
             ch = nethack.C(event.key[5])
         else:
