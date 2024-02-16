@@ -40,8 +40,12 @@ class Sokoban(MiniHackNavigation):
                 return self.StepStatus.RUNNING
 
         # stepping into a pit should result in death
-        agent_pos = list(self._object_positions(observation, "@"))[0]
-        if any([agent_pos == pos for pos in self._current_pits]):
+        # additionally handle case when agent isn't visible,
+        # probably death from other reasons
+        agent_pos = list(self._object_positions(observation, "@"))
+        if len(agent_pos) > 0 and any(
+            [agent_pos == pos for pos in self._current_pits]
+        ):
             return self.StepStatus.DEATH
 
         return result
