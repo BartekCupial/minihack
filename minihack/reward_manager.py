@@ -462,7 +462,7 @@ class RewardManager(AbstractRewardManager):
                 False.
         """
         msgs = [
-            f"{name} wields itself to your hand!",
+            f"{name} welds itself to your hand!",
             f"{name} (weapon in hand)",
         ]
         self._add_message_event(
