@@ -137,7 +137,7 @@ class MiniHackWoDHard(MiniHackSkill):
         lvl_gen.set_start_rect((1, 1), (5, 5))
         lvl_gen.add_goal_pos((27, 1))
 
-        lvl_gen.set_area_variable("$safe_room", "fillrect", 1, 1, 5, 5)
+        lvl_gen.set_area_variable("$safe_room", "fillrect", 1, 1, 4, 4)
         lvl_gen.add_object_area(
             "$safe_room", name="death", symbol="/", cursestate="blessed"
         )
@@ -163,7 +163,7 @@ class MiniHackWoDHardRestrictedActions(MiniHackSkill):
         lvl_gen.set_start_rect((1, 1), (5, 5))
         lvl_gen.add_goal_pos((27, 1))
 
-        lvl_gen.set_area_variable("$safe_room", "fillrect", 1, 1, 5, 5)
+        lvl_gen.set_area_variable("$safe_room", "fillrect", 1, 1, 4, 4)
         lvl_gen.add_object_area(
             "$safe_room", name="death", symbol="/", cursestate="blessed"
         )
