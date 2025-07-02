@@ -89,8 +89,8 @@ class MiniGridHack(MiniHackNavigation):
 
         return env_map, start_pos, goal_pos, door_pos
 
-    def get_env_desc(self):
-        self.minigrid_env.reset()
+    def get_env_desc(self, seed=None):
+        self.minigrid_env.reset(seed=seed)
         env = self.minigrid_env
 
         map, start_pos, goal_pos, door_pos = self.get_env_map(env)
@@ -133,11 +133,10 @@ class MiniGridHack(MiniHackNavigation):
         Returns:
             [tuple] The seeds supplied, in the form (core, disp, reseed).
         """
-        self.minigrid_env.seed(core)
         return super().seed(core, disp, reseed)
 
-    def reset(self, options=dict(wizkit_items=None), **kwargs):
-        des_file = self.get_env_desc()
+    def reset(self, seed=None, options=dict(wizkit_items=None), **kwargs):
+        des_file = self.get_env_desc(seed=seed)
         self.update(des_file)
         return super().reset(options=options, **kwargs)
 
